@@ -1,6 +1,6 @@
-mkdir -p images/output_1000
-mkdir -p images/output_1200
-mkdir -p images/output_1500
-mogrify -path images/output_1000/ -resize 1000 images/*.jpg
-mogrify -path images/output_1200/ -resize 1200 images/*.jpg
-mogrify -path images/output_1500/ -resize 1500 images/*.jpg
+mkdir -p images/output_600
+mkdir -p images/output_768
+mkdir -p images/output_993
+mogrify -path images/output_600 -filter Triangle -define filter:support=2 -thumbnail 600 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 72 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB images/*.jpg
+mogrify -path images/output_768 -filter Triangle -define filter:support=2 -thumbnail 768 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 72 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB images/*.jpg
+mogrify -path images/output_993 -filter Triangle -define filter:support=2 -thumbnail 993 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 72 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB images/*.jpg
