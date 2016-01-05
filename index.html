@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style>
+.image {
+    width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<div style="max-width:1400px; margin:0 auto;">
+<!-- All browsers but IE understand srcset ... if you use srcset, you're required to use sizes -->
+
+<!-- SRCSET: I’m telling the browser that I have a series of images to choose from, depending on the need.The XXXw at the end of each line is the actual width of that image. -->
+
+<!-- SIZES: I'm only declaring one percentage here, and that is any device that's a minimum of 0 pixels on up.  If I needed a device width to use a different percentage than 100vw ... I would have put a comma at the end of that first size line, and then on teh second line declare the media query, followed by something like 75vw and the closing quotes.  -->
+
+<img srcset="images/600/energy.jpg 600w, 
+             images/768/energy.jpg 768w, 
+             images/993/energy.jpg 993w,
+             images/1200/energy.jpg 1200w" 
+
+     sizes="(min-width: 0px) 100vw" 
+     src="images/1200/energy.jpg" alt="Energy image" class="image">
+
+<!-- src is the fallback for IE, and since we need to make sure the image will work on all devices, we go with the largest image.  -->
+     
+</div>     
+     
+</body>
+</html>
